@@ -1,0 +1,51 @@
+<p>
+  ID: {{user.id}}
+  Name: {{user.name}}
+</p>
+<p>
+  Address {{ user. address}}
+</p>
+<p>
+  Result: {{ sayHi() }}
+</p>
+<h2>Value of I: {{ i }}</h2>
+<button (click)="addCount()">
+  Update i
+</button>
+<button (click)="deleteCount()">
+  delete i
+</button>
+<p>
+  <input type="text" #fullName>
+  <button (click)="NameInput(fullName.value)">
+    Read name  
+  </button>
+</p>
+<p>
+  Name: {{ nameInput }}
+</p>
+
+<p>
+  <input type="text" #age>
+  <button (click)="readAge(age.value)">ตกลง</button>
+</p>
+
+<!-- NG directive ngif ngFor-->
+<div *ngIf="validAge else falseBlock">
+    Valid data
+</div>
+
+<ng-template #falseBlock>
+  Invalid data
+</ng-template>
+
+<select>
+  <option *ngFor="let m of menus">{{ m }}</option>
+</select>
+ <p>
+   <select name="" id="">
+     <option *ngFor="let c of courses" [value]="c.id">
+       {{ c.title }}
+     </option>
+   </select>
+ </p>
